@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mami & Baby | Cartoon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(to bottom, #fceabb, #f8b500);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: #ffca28;
+      padding: 20px;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    nav {
+      background: #fff3e0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    nav a {
+      text-decoration: none;
+      background: #4fc3f7;
+      padding: 10px 16px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover, nav a.active {
+      background: #0288d1;
+    }
+    .container {
+      padding: 20px;
+    }
+    h2 {
+      color: #d84315;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 15px;
+      border: 4px solid #ffb74d;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    iframe:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 1em;
+      color: #555;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>📺 Mami & Baby Cartoon Zone</header>
+
+  <nav>
+    <a href="home.html">🏠 Home</a>
+    <a href="cartoon.html" class="active">📺 Cartoon</a>
+    <a href="game.html">🎮 Game</a>
+    <a href="story.html">📖 Story</a>
+    <a href="story2.html">📖 Story2</a>
+    <a href="learn.html">📘 Learn</a>
+  </nav>
+
+  <div class="container">
+    <h2>🎉 Watch & Enjoy Funny and Educational Cartoons!</h2>
+    <div class="video-grid">
+      <!-- Cartoon Video 1 -->
+      <iframe src="https://www.youtube.com/embed/KZkfwqn9p6w" 
+              title="Cartoon 1" 
+              allowfullscreen></iframe>
+
+      <!-- Cartoon Video 2 -->
+      <iframe src="https://www.youtube.com/embed/4F8GAV7Of3Q"
+              title="Cartoon 2"
+              allowfullscreen></iframe>
+
+      <!-- Cartoon Video 3 -->
+      <iframe src="https://www.youtube.com/embed/W9LoIgmyz44" 
+              title="Cartoon 3" 
+              allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ for kids | Mami & Baby World | Designed by Nasir Smart Winner Boy
+  </footer>
+
+</body>
+</html>

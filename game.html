@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mami & Baby | Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(to bottom, #e0f7fa, #fffde7);
+      text-align: center;
+    }
+
+    header {
+      background: #4dd0e1;
+      padding: 30px 10px;
+      color: white;
+      border-bottom: 4px solid #00acc1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 12px;
+    }
+
+    .buttons a {
+      background: #ffd54f;
+      color: #333;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .buttons a:hover {
+      background: #ffca28;
+      transform: scale(1.05);
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 30px;
+    }
+
+    .game-card {
+      background: #fff9c4;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.03);
+      background: #fff59d;
+    }
+
+    .game-card h3 {
+      font-size: 1.5em;
+      color: #d84315;
+    }
+
+    .game-card p {
+      font-size: 1em;
+      color: #444;
+    }
+
+    .game-card a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #4fc3f7;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .game-card a:hover {
+      background: #0288d1;
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* Balloon styles */
+    #balloon {
+      width: 120px;
+      margin-top: 10px;
+      transition: transform 0.05s ease, rotate 0.05s ease;
+      cursor: pointer;
+    }
+
+    #boom {
+      font-size: 2em;
+      color: red;
+      display: none;
+      animation: fade .4s linear;
+    }
+
+    @keyframes fade {
+      0% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0; transform: scale(2); }
+    }
+
+    #score {
+      font-size: 1.3em;
+      color: #00796b;
+      margin-top: 10px;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎮 Mami & Baby Game World</h1>
+  </header>
+
+  <div class="buttons">
+    <a href="home.html">🏡 Home</a>
+    <a href="cartoon.html">📺 Cartoons</a>
+    <a href="story.html">📘 Story 1</a>
+    <a href="story2.html">📗 Story 2</a>
+    <a href="learn.html">📘 Learn</a>
+    <a href="game.html" class="active">🎮 Games</a>
+  </div>
+
+  <div class="game-grid">
+
+    <!-- Balloon Pop Game (live) -->
+    <div class="game-card">
+      <h3>🎈 Balloon Pop</h3>
+      <p>Click the balloon and earn points! Fun and simple.</p>
+      <div id="score">Score: 0</div>
+      <img id="balloon" src="download (12).jpeg" alt="Balloon">
+      <div id="boom">💥 POP!</div>
+      <audio id="popSound" preload="auto">
+        <source src="balloon-pop-48030.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- Guess the Sound -->
+    <div class="game-card">
+      <h3>🧠 Guess the Sound</h3>
+      <p>Listen and guess what you hear — animal, object, or letter!</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+    <!-- Puzzle Match -->
+    <div class="game-card">
+      <h3>🧩 Puzzle Match</h3>
+      <p>Drag and match pieces to complete cute cartoon puzzles!</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+    <!-- Animal Name Game -->
+    <div class="game-card">
+      <h3>🐾 Animal Game</h3>
+      <p>Tap the animal and hear its name & sound!</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+    <!-- Letter Match Game -->
+    <div class="game-card">
+      <h3>🔤 Letter Match</h3>
+      <p>Match big and small letters to learn ABC!</p>
+      <a href="#">Coming Soon</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Mami & Baby Game World | Built with ❤️ by Nasir</p>
+  </footer>
+
+  <script>
+    const balloon = document.getElementById("balloon");
+    const scoreDisplay = document.getElementById("score");
+    const popSound = document.getElementById("popSound");
+    const boom = document.getElementById("boom");
+    let score = 0;
+
+    balloon.addEventListener("click", () => {
+      score++;
+      scoreDisplay.textContent = "Score: " + score;
+
+      if (navigator.vibrate) navigator.vibrate(100);
+
+      popSound.currentTime = 0;
+      popSound.play();
+
+      balloon.style.transform = "scale(1.1) rotate(2deg)";
+      setTimeout(() => {
+        balloon.style.transform = "scale(1) rotate(0deg)";
+      }, 80);
+
+      boom.style.display = "block";
+      setTimeout(() => {
+        boom.style.display = "none";
+      }, 400);
+    });
+  </script>
+
+</body>
+</html>
