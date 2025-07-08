@@ -9,14 +9,22 @@
     body {
       margin: 0;
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(to bottom, #fff4e6, #ffe0f0);
+      background: linear-gradient(-45deg, #ffe0f0, #fff4e6, #fceabb, #f8b500);
+      background-size: 400% 400%;
+      animation: gradientChange 10s ease infinite;
       overflow-x: hidden;
       text-align: center;
     }
 
+    @keyframes gradientChange {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
       background: linear-gradient(to right, #ffb6c1, #ffecb3);
-      padding: 30px 15px;
+      padding: 35px 20px;
       border-bottom: 4px solid #ff69b4;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
@@ -30,38 +38,24 @@
 
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      50% { transform: translateY(-10px); }
     }
 
-    nav {
-      background: #fff3e0;
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
+    .balloons {
+      font-size: 2em;
+      margin-top: 10px;
+      animation: float 4s ease-in-out infinite;
     }
 
-    nav a {
-      text-decoration: none;
-      background: #4fc3f7;
-      color: white;
-      padding: 12px 22px;
-      font-size: 1.1em;
-      border-radius: 35px;
-      transition: 0.3s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    nav a:hover, nav a.active {
-      background: #0288d1;
-      transform: scale(1.05);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
     }
 
     .tagline {
-      font-size: 1.4em;
+      font-size: 1.3em;
       color: #444;
-      margin: 20px;
+      margin-top: 10px;
       animation: fadein 2s ease;
     }
 
@@ -70,14 +64,29 @@
       to { opacity: 1; }
     }
 
-    .balloons {
-      font-size: 2.2em;
-      animation: float 5s ease-in-out infinite;
+    nav {
+      background: #fff3e0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-18px); }
+    nav a {
+      text-decoration: none;
+      background: #4fc3f7;
+      padding: 12px 20px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    nav a:hover, nav a.active {
+      background: #0288d1;
+      transform: scale(1.05);
     }
 
     .video-grid {
@@ -90,14 +99,14 @@
     iframe {
       width: 100%;
       height: 200px;
-      border-radius: 20px;
+      border-radius: 18px;
       border: 4px solid #ffd54f;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.4s ease;
     }
 
     iframe:hover {
-      transform: scale(1.07);
+      transform: scale(1.06);
     }
 
     footer {
@@ -111,9 +120,9 @@
 <body>
 
   <header>
-    <h1>📺 Mami & Baby Cartoons Time!</h1>
-    <div class="balloons">🎈🎈✨🧸💖🌈</div>
-    <p class="tagline">Enjoy Fun, Laughs, and Learning with Our Best Videos!</p>
+    <h1>📺 Mami & Baby Cartoons</h1>
+    <div class="balloons">🎈🎈🎉✨🧸🧁</div>
+    <p class="tagline">Watch, Laugh and Learn – Cartoon Time! 💖</p>
   </header>
 
   <nav>
@@ -122,21 +131,13 @@
     <a href="game.html">🎮 Game</a>
     <a href="story.html">📖 Story1</a>
     <a href="story2.html">📖 Story2</a>
-    <a href="learn.html">📘 Learn</a>
+    <a href="learn.html">🧠 Learn</a>
   </nav>
 
   <div class="video-grid">
-    <!-- Cartoon Video 1 -->
-    <iframe src="https://www.youtube.com/embed/KZkfwqn9p6w" 
-            title="Cartoon 1" allowfullscreen></iframe>
-
-    <!-- Cartoon Video 2 -->
-    <iframe src="https://www.youtube.com/embed/4F8GAV7Of3Q"
-            title="Cartoon 2" allowfullscreen></iframe>
-
-    <!-- Cartoon Video 3 -->
-    <iframe src="https://www.youtube.com/embed/W9LoIgmyz44" 
-            title="Cartoon 3" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/KZkfwqn9p6w" title="Cartoon 1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/4F8GAV7Of3Q" title="Cartoon 2" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/W9LoIgmyz44" title="Cartoon 3" allowfullscreen></iframe>
   </div>
 
   <footer>
