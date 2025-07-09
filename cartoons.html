@@ -119,6 +119,48 @@
       transform: scale(1.06);
     }
 
+    <!-- Balloon Emoji Animation 🎈 -->
+  .balloon-container {
+    position: fixed;
+    bottom: 0;
+    left: 10%;
+    font-size: 2.5em;
+    animation: flyBalloon 8s linear infinite;
+    z-index: 1000;
+  }
+
+  .balloon-container2 {
+    position: fixed;
+    bottom: 0;
+    left: 30%;
+    font-size: 2.2em;
+    animation: flyBalloon 10s linear infinite;
+    z-index: 1000;
+  }
+
+  .balloon-container3 {
+    position: fixed;
+    bottom: 0;
+    left: 70%;
+    font-size: 2.8em;
+    animation: flyBalloon 12s linear infinite;
+    z-index: 1000;
+  }
+
+  @keyframes flyBalloon {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-130vh);
+      opacity: 0;
+    }
+  }
+
+
+
+
     footer {
       font-size: 0.95em;
       color: #777;
@@ -131,15 +173,12 @@
   <header>
     <h1>📺 Mami & Baby Cartoons</h1>
     <p class="tagline">Fun, Laughter & Learning Every Day! 🌈✨</p>
-
-    <!-- Flying Balloons -->
-    <img class="balloon balloon1" src="https://i.postimg.cc/mZqTrvpb/balloon-red.png" alt="Balloon">
-    <img class="balloon balloon2" src="https://i.postimg.cc/G2scXz0J/balloon-blue.png" alt="Balloon">
-    <img class="balloon balloon3" src="https://i.postimg.cc/SKDBsgg6/balloon-yellow.png" alt="Balloon">
-    <img class="balloon balloon4" src="https://i.postimg.cc/DwnCjLk3/balloon-pink.png" alt="Balloon">
-    <img class="balloon balloon5" src="https://i.postimg.cc/RVxwM3wh/balloon-green.png" alt="Balloon">
-  </header>
-
+<!-- Floating Balloons on the Page -->
+<div class="balloon-container">🎈</div>
+<div class="balloon-container2">🎈</div>
+<div class="balloon-container3">🌈</div>
+<div class="balloon-container2">💙</div>
+<div class="balloon-container3">❤️</div>
   <nav>
     <a href="index.html">🏡 Home</a>
     <a href="cartoon.html" class="active">📺 Cartoons</a>
