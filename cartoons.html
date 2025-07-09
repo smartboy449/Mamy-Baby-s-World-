@@ -9,24 +9,26 @@
     body {
       margin: 0;
       font-family: 'Comic Neue', cursive;
-      background: linear-gradient(-45deg, #ffe0f0, #fff4e6, #fceabb, #f8b500);
-      background-size: 400% 400%;
-      animation: gradientChange 10s ease infinite;
+      background: linear-gradient(-45deg, #ffd6ec, #fff8dc, #ffe0f0, #e0f7fa);
+      background-size: 600% 600%;
+      animation: changeBg 12s ease infinite;
       overflow-x: hidden;
       text-align: center;
     }
 
-    @keyframes gradientChange {
+    @keyframes changeBg {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
     header {
-      background: linear-gradient(to right, #ffb6c1, #ffecb3);
-      padding: 35px 20px;
-      border-bottom: 4px solid #ff69b4;
+      padding: 35px 15px;
+      background: linear-gradient(to right, #ffb6c1, #fff9c4);
+      border-bottom: 5px solid #ff4081;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
@@ -41,21 +43,29 @@
       50% { transform: translateY(-10px); }
     }
 
-    .balloons {
-      font-size: 2em;
-      margin-top: 10px;
-      animation: float 4s ease-in-out infinite;
+    .balloon {
+      position: absolute;
+      width: 60px;
+      animation: fly 10s linear infinite;
+      opacity: 0.9;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+    .balloon1 { left: 5%; animation-delay: 0s; }
+    .balloon2 { left: 25%; animation-delay: 2s; }
+    .balloon3 { left: 50%; animation-delay: 4s; }
+    .balloon4 { left: 75%; animation-delay: 1s; }
+    .balloon5 { left: 90%; animation-delay: 3s; }
+
+    @keyframes fly {
+      0% { bottom: -100px; transform: translateX(0) rotate(0); }
+      50% { transform: translateX(20px) rotate(15deg); }
+      100% { bottom: 100%; transform: translateX(-20px) rotate(-15deg); }
     }
 
     .tagline {
       font-size: 1.3em;
       color: #444;
-      margin-top: 10px;
+      margin-top: 15px;
       animation: fadein 2s ease;
     }
 
@@ -70,17 +80,17 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     nav a {
       text-decoration: none;
       background: #4fc3f7;
-      padding: 12px 20px;
-      border-radius: 30px;
       color: white;
-      font-weight: bold;
-      transition: 0.3s;
+      padding: 12px 22px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      transition: 0.3s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
@@ -112,8 +122,7 @@
     footer {
       font-size: 0.95em;
       color: #777;
-      padding-bottom: 30px;
-      margin-top: 40px;
+      padding: 30px 0;
     }
   </style>
 </head>
@@ -121,8 +130,14 @@
 
   <header>
     <h1>📺 Mami & Baby Cartoons</h1>
-    <div class="balloons">🎈🎈🎉✨🧸🧁</div>
-    <p class="tagline">Watch, Laugh and Learn – Cartoon Time! 💖</p>
+    <p class="tagline">Fun, Laughter & Learning Every Day! 🌈✨</p>
+
+    <!-- Flying Balloons -->
+    <img class="balloon balloon1" src="https://i.postimg.cc/mZqTrvpb/balloon-red.png" alt="Balloon">
+    <img class="balloon balloon2" src="https://i.postimg.cc/G2scXz0J/balloon-blue.png" alt="Balloon">
+    <img class="balloon balloon3" src="https://i.postimg.cc/SKDBsgg6/balloon-yellow.png" alt="Balloon">
+    <img class="balloon balloon4" src="https://i.postimg.cc/DwnCjLk3/balloon-pink.png" alt="Balloon">
+    <img class="balloon balloon5" src="https://i.postimg.cc/RVxwM3wh/balloon-green.png" alt="Balloon">
   </header>
 
   <nav>
@@ -141,8 +156,8 @@
   </div>
 
   <footer>
-    &copy; 2025 Mami & Baby's World | Designed with 🧁 by Nasir the Genius
+    &copy; 2025 Mami & Baby's World | Built with 🎈 by Nasir the Genius
   </footer>
 
 </body>
-  </html>
+      </html>
